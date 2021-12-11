@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<widget id="com.mendix.widget.custom.treeview.TreeView" needsEntityContext="true" offlineCapable="true"
-        supportedPlatform="Web"
-        xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+<widget id="com.mendix.widget.custom.treeview.TreeView" needsEntityContext="true" offlineCapable="true" supportedPlatform="Web"
+    xmlns="http://www.mendix.com/widget/1.0/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
     <name>Tree View</name>
     <description>TreeView for Mendix</description>
     <icon>iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAADh0lEQVR4nO3d8W3aQBiHYVx1BOObKkLKDp0qMwQZT5WEIahQSKVW0a8OiWwu9zyS/6eFNweG+24DAAAAAAAAAAAAAAAAAAAAAAAAAEAtHh8f7/u+P242m9Ma13a7fRnHcXc6nTY1Xnxza8bxdg3D8CyQOnQN/kG4iWf5dDpV+X/fdW29ZH7cwGOAm/Wz9admqb/kXdd5A18hKwgEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFAIBAIBAKBQCAQCAQCQfP7QezTILGCQNBcINvt9rj2YyilPK/9GOBd55E756kia000KaU8TdN0Z6pJHZqbanLtk/zvZ5Vap5J8lqkmgEBgDoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFAIBAIBAKBQCAQCAQCgUAgEAikEvv9/v68n/68s3GNaxiGl8PhsGv9efj2PrEX+6+95UvvBe/7/rjWPvq367KXvyn2pM+09p70G5rf1dRrxlssCJqfrFirpVaw1idPWkEgEAgEAoFAIBAIBAJ3sa7U+t2dVlhBIBAIBAKBwGeQKzX8W6ymWEEgEAgEAoFAIBAIBAJ3sSrlrtYyrCAQCKQS54kmaz/SUkpzQxuaU+tUk3Ecd5epIqtMNCmlPE3TdNfa68VUk5nWnmpyK7qurX+2t1gQCAQCgUAgEAgEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFAIBAIBAKphHPSWYRz0p2T/hF2FM7knPQ/nJMOvDIXq1LOSV+GFQQCgUAgEAgEAoFAIHAX60qt391phRUEAoFAIBAIfAa5knPS22AFgUAgEAgEAoFAIBAI3MWqlLtay7CCQCCQSjgnnUU4J9056R9hqslMzkl/5Zx0QCAwh0AgEAgEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFAIBAIBAKBQCAQCARSif1+f3/el37e2bjGNQzDy+Fw2LX+PHx7te5J7/v+uNZ+9Lfrsie+Kfakz7T2nvQbmoPV1GvGWywITFas1FIrWOsTHK0gEAgEAoFAIBAIBAKBu1hXav3uTiusIBAIZKZbOJ+D5QlkpoeHh1/nH+xV8WD5Mn6LVYm1fgv2zmctv8UCBAL/JRAIBAKBQCDwTXqlfJO/DCsIBAKpxC18k19KaW5oQ3OWnkbyVdc4jrvLVJFVJpqUUp6mabpr/fUDAAAAAAAAAAAAAAAAAAAAAAAAAFCJzWbzG57uxl0Vfft2AAAAAElFTkSuQmCC</icon>
@@ -57,7 +56,7 @@
                     <caption>Root attribute</caption>
                     <description>When loading the whole tree, the widget needs to know which nodes are considered top-level</description>
                     <attributeTypes>
-                            <attributeType name="Boolean" />
+                        <attributeType name="Boolean" />
                     </attributeTypes>
                 </property>
             </propertyGroup>
@@ -101,8 +100,8 @@
 -- Node - Parent: Node has a reference to its parent
 -- Node - Children: Node has a reference set to its children</description>
                     <enumerationValues>
-                            <enumerationValue key="nodeParent">Node - Parent</enumerationValue>
-                            <enumerationValue key="nodeChildren">Node - Children</enumerationValue>
+                        <enumerationValue key="nodeParent">Node - Parent</enumerationValue>
+                        <enumerationValue key="nodeChildren">Node - Children</enumerationValue>
                     </enumerationValues>
                 </property>
             </propertyGroup>
@@ -115,7 +114,7 @@
                     <caption>Has Child attribute</caption>
                     <description>Note: the "Has Child attribute" is only needed when loading children (so not needed if you load the whole tree at once).</description>
                     <attributeTypes>
-                         <attributeType name="Boolean" />
+                        <attributeType name="Boolean" />
                     </attributeTypes>
                 </property>
             </propertyGroup>
@@ -133,15 +132,15 @@
                     <caption>Node Title Type</caption>
                     <description></description>
                     <enumerationValues>
-                         <enumerationValue key="attribute">Attribute</enumerationValue>
-                         <enumerationValue key="nanoflow">Nanoflow</enumerationValue>
+                        <enumerationValue key="attribute">Attribute</enumerationValue>
+                        <enumerationValue key="nanoflow">Nanoflow</enumerationValue>
                     </enumerationValues>
                 </property>
                 <property key="uiNodeTitleAttr" type="attribute" entityProperty="nodeEntity" required="false">
                     <caption>Node Title attribute</caption>
                     <description>Attribute that contains the title. Note that this can contain HTML if you need it.</description>
                     <attributeTypes>
-                         <attributeType name="String" />
+                        <attributeType name="String" />
                     </attributeTypes>
                 </property>
                 <property key="uiNodeTitleNanoflow" type="nanoflow" entityProperty="nodeEntity" required="false">
@@ -159,7 +158,7 @@
                     <caption>Icon attr</caption>
                     <description>If you want to show an icon, set the attribute. This string will be used as the class for an icon</description>
                     <attributeTypes>
-                         <attributeType name="String" />
+                        <attributeType name="String" />
                     </attributeTypes>
                 </property>
                 <property key="uiNodeIconIsGlyphicon" type="boolean" defaultValue="true">
@@ -172,7 +171,7 @@
                     <caption>Class attr</caption>
                     <description>If you need to set an extra class name on the node itself (for example, to add a color to it), you can use this attribute.</description>
                     <attributeTypes>
-                         <attributeType name="String" />
+                        <attributeType name="String" />
                     </attributeTypes>
                 </property>
             </propertyGroup>
@@ -220,7 +219,7 @@ Note:
                     <caption>Search attribute</caption>
                     <description></description>
                     <attributeTypes>
-                         <attributeType name="String" />
+                        <attributeType name="String" />
                     </attributeTypes>
                 </property>
                 <property key="searchNodeReference" type="entity" required="false" entityProperty="searchHelperEntity" isPath="yes" pathType="referenceSet" allowNonPersistableEntities="true">
@@ -243,18 +242,18 @@ Note:
                     <caption>Node click action</caption>
                     <description>This action is executed when you click a Node (the first column)</description>
                     <enumerationValues>
-                            <enumerationValue key="nothing">Nothing</enumerationValue>
-                            <enumerationValue key="microflow">Microflow</enumerationValue>
-                            <enumerationValue key="nanoflow">Nanoflow</enumerationValue>
-                            <enumerationValue key="open">Open page</enumerationValue>
+                        <enumerationValue key="nothing">Nothing</enumerationValue>
+                        <enumerationValue key="microflow">Microflow</enumerationValue>
+                        <enumerationValue key="nanoflow">Nanoflow</enumerationValue>
+                        <enumerationValue key="open">Open page</enumerationValue>
                     </enumerationValues>
                 </property>
                 <property key="eventNodeClickFormat" type="enumeration" defaultValue="single">
                     <caption>Node click type</caption>
                     <description></description>
                     <enumerationValues>
-                         <enumerationValue key="single">Single</enumerationValue>
-                         <enumerationValue key="double">Double</enumerationValue>
+                        <enumerationValue key="single">Single</enumerationValue>
+                        <enumerationValue key="double">Double</enumerationValue>
                     </enumerationValues>
                 </property>
                 <property key="eventNodeOnClickMicroflow" type="microflow" required="false" entityProperty="nodeEntity">
@@ -301,9 +300,9 @@ Note:
 Note: State management (currently) ONLY works when you load a whole tree (see Data section). In case of 'Top level', it will be disabled.
                     </description>
                     <enumerationValues>
-                         <enumerationValue key="disabled">Disabled</enumerationValue>
-                         <enumerationValue key="localStorage">Browser</enumerationValue>
-                         <!-- <enumerationValue key="mendix">Mendix (server) NOT WORKING YET!!</enumerationValue> -->
+                        <enumerationValue key="disabled">Disabled</enumerationValue>
+                        <enumerationValue key="localStorage">Browser</enumerationValue>
+                        <!-- <enumerationValue key="mendix">Mendix (server) NOT WORKING YET!!</enumerationValue> -->
                     </enumerationValues>
                 </property>
             </propertyGroup>
@@ -312,8 +311,8 @@ Note: State management (currently) ONLY works when you load a whole tree (see Da
                     <caption>Storage type</caption>
                     <description>If you use session (default), it will only apply to current session. If you use local storage, it will stay in the browser as local storage, persisting over multiple sessions. This does mean the local storage can get polluted with a lot of states.</description>
                     <enumerationValues>
-                         <enumerationValue key="session">Session</enumerationValue>
-                         <enumerationValue key="local">Local Storage</enumerationValue>
+                        <enumerationValue key="session">Session</enumerationValue>
+                        <enumerationValue key="local">Local Storage</enumerationValue>
                     </enumerationValues>
                 </property>
                 <property key="stateLocalStorageTime" type="integer" required="true" defaultValue="60">

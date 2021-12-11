@@ -10,5 +10,5 @@ export class preview extends Component<TreeViewPreviewProps> {
 }
 
 export function getPreviewCss(): string {
-    return require("./ui/TreeView.scss");
+    return require("./ui/index.scss");
 }
