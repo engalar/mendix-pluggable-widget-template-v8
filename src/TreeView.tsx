@@ -32,10 +32,16 @@ import { getStaticTitleFromObject, getDynamicTitleFromObject, ClickCellType } fr
 import { validateProps } from "./utils/validation";
 import { commitObject } from "@jeltemx/mendix-react-widget-utils";
 
-export interface Action extends IAction {}
+export interface Action extends IAction { }
 export type ActionReturn = string | number | boolean | mendix.lib.MxObject | mendix.lib.MxObject[] | void;
 
-class TreeView extends Component<TreeViewContainerProps> {
+class TreeView extends Component<TreeViewContainerProps & {
+    uniqueid: string;
+    friendlyId?: string;
+    mxform: mxui.lib.form._FormBase;
+    mxObject?: mendix.lib.MxObject;
+    style: string;
+}> {
     ref = createRef<HTMLDivElement>();
 
     private store: NodeStore;
@@ -55,7 +61,13 @@ class TreeView extends Component<TreeViewContainerProps> {
     search = this._search.bind(this);
     debug = this._debug.bind(this);
 
-    constructor(props: TreeViewContainerProps) {
+    constructor(props: TreeViewContainerProps & {
+        uniqueid: string;
+        friendlyId?: string;
+        mxform: mxui.lib.form._FormBase;
+        mxObject?: mendix.lib.MxObject;
+        style: string;
+    }) {
         super(props);
 
         const parentRef = props.relationType === "nodeParent" ? splitRef(props.relationNodeParent) : null;
@@ -424,9 +436,8 @@ class TreeView extends Component<TreeViewContainerProps> {
         this.debug("writeTableState", writeState);
         const key =
             stateLocalStorageKey !== ""
-                ? `TreeViewState-${stateLocalStorageKey}${
-                      stateLocalStorageKeyIncludeGUID ? `-${writeState.context}` : ""
-                  }`
+                ? `TreeViewState-${stateLocalStorageKey}${stateLocalStorageKeyIncludeGUID ? `-${writeState.context}` : ""
+                }`
                 : `TreeViewState-${writeState.context}`;
         writeState.lastUpdate = +new Date();
         if (stateLocalStorageType === "session") {

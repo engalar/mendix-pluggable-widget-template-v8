@@ -1,16 +1,16 @@
-import { TitleDataSourceType, Nanoflow } from "../../typings/TreeViewProps";
 import { Action } from "../TreeView";
 import { ReactNode, createElement, ReactElement } from "react";
 
 import TemplateComponent from "react-mustache-template-component";
-import { ActionReturnType } from "@jeltemx/mendix-react-widget-utils";
+import { ActionReturnType, INanoflow } from "@jeltemx/mendix-react-widget-utils";
+import { UiNodeTitleTypeEnum } from "../../typings/TreeViewProps";
 
 export type ClickCellType = "single" | "double";
 
 export interface GetTitleOptions {
-    titleType: TitleDataSourceType;
+    titleType: UiNodeTitleTypeEnum;
     attribute?: string;
-    nanoflow?: Nanoflow;
+    nanoflow?: INanoflow;
     executeAction?: (action: Action, showError: boolean, obj?: mendix.lib.MxObject) => Promise<ActionReturnType>;
     renderAsHTML?: boolean;
 }

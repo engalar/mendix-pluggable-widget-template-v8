@@ -3,7 +3,7 @@ import arrayToTree, { Tree } from "array-to-tree";
 
 import { ValidationMessage } from "@jeltemx/mendix-react-widget-utils/lib/validation";
 import { EntryObject, EntryObjectOptions, EntryObjectExtraOptions, TreeObject } from "./objects/entry";
-import { RelationType } from "../../typings/TreeViewProps";
+import { RelationTypeEnum } from "../../typings/TreeViewProps";
 import { getObject } from "@jeltemx/mendix-react-widget-utils";
 
 configure({ enforceActions: "observed" });
@@ -43,7 +43,7 @@ export interface EntryObjectAttributes {
     rootAttr: string | null;
     iconAttr: string | null;
     classAttr: string | null;
-    relationType: RelationType;
+    relationType: RelationTypeEnum;
 }
 
 const arrayToTreeOpts = {
