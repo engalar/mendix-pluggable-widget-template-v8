@@ -54,7 +54,7 @@ const customConfig = {
                     output: {
                         comments: false,
                         beautify: false,
-                        preamble: `/* TreeView for Mendix || Version ${pkg.version} || Apache 2 LICENSE || Developer: ${pkg.author} || Please report any issues here: https://github.com/JelteMX/mendix-tree-view/issues */\n`
+                        preamble: `/* Cascader for Mendix || Version ${pkg.version} || Apache 2 LICENSE || Developer: ${pkg.author} || Please report any issues here: https://github.com/JelteMX/mendix-tree-view/issues */\n`
                         // comments: false
                     },
                     toplevel: false,
